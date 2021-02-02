@@ -22,8 +22,10 @@ function previousSlide() {
     pages[pagePosition].classList.remove('pageActive')
     if (pagePosition == 0) {
         pagePosition = carouselItems.length - 1;
+    } else {
+        pagePosition--;
     }
-    carouselItems[pagePosition].classList.add(pageActive);
+    carouselItems[pagePosition].classList.add('pageActive');
     pages[pagePosition].classList.add('pageActive');
 }
 
