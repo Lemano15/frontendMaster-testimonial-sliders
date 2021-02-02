@@ -14,6 +14,7 @@ body {
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: 60%;
+    cursor: default;
 }
 
 #carousel {
@@ -53,8 +54,9 @@ body {
 #carousel {
     order: -1;
     position: relative;
+    z-index: 1;
     width: 60%;
-    max-width: 350px;
+    max-width: 400px;
     margin: 1em auto;
     padding: 2em;
 }
@@ -62,6 +64,38 @@ body {
 .carousel-item {
     display: none;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+
+}
+
+.carousel-controls {
+    position: absolute;
+    display: flex;
+    left: 25%;
+    right: 25%;
+    bottom: 2%;
+    justify-content: center;
+}
+
+.btn {
+    width: 25%;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 10px 4px 10px 4px rgba(0, 0, 0, 0.2);
+}
+
+#prevButton {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    cursor: pointer;
+}
+
+#nextButton {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    cursor: hand;
 }
 
 .page {
@@ -91,7 +125,62 @@ body {
     line-height: 25px;
 }
 
-
 .attribution {
     margin-top: 3em;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+@media (min-width: 1100px) {
+    body {
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .page {
+        width: 50%;
+        margin: 0;
+        margin-right: -5em;
+        margin-left: 5em;
+        text-align: left;
+    }
+
+    .credentials {
+        display: flex;
+    }
+
+    .subjectPosition {
+        margin: 0 .5em;
+    }
+
+    #carousel {
+        order: 1;
+        margin-left: -5em;
+        margin-right: 4em;
+        padding: 4em;
+        z-index: 0;
+    }
+
+    .carousel-controls {
+        left: 8%;
+        right: 50%;
+        bottom: 8%;
+    }
+
+    .quote {
+        font-size: 1.8rem;
+        line-height: 40px;
+        padding: 1em .2em;
+        z-index: 1;
+        background-position: top left;
+    }
+
+    .attribution {
+        order: 2;
+    }
 }
